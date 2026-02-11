@@ -1,0 +1,158 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Bee Shop Component Styles
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.shop {
+    padding: var(--space-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s var(--ease-out);
+}
+
+.shop__title {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-accent);
+    text-align: center;
+    margin-bottom: var(--space-xs);
+}
+
+.shop__subtitle {
+    font-size: 9px;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.shop__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* Bee Card */
+.bee-card {
+    background: var(--bg-surface);
+    border: 2px solid var(--border-default);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    transition: all var(--duration) var(--ease-out);
+}
+
+.bee-card:hover {
+    border-color: var(--border-active);
+    box-shadow: var(--glow-amber);
+    transform: translateY(-2px);
+}
+
+.bee-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.bee-card__icon {
+    font-size: 32px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.bee-card__name {
+    font-size: 11px;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.bee-card__desc {
+    font-size: 8px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.bee-card__stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-default);
+}
+
+.bee-card__stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+}
+
+.bee-card__stat-label {
+    color: var(--text-secondary);
+}
+
+.bee-card__stat-value {
+    color: var(--text-accent);
+}
+
+.bee-card__qty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.bee-card__qty-btn {
+    font-family: var(--font-pixel), 'Press Start 2P', monospace;
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--border-default);
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--duration) var(--ease-out);
+}
+
+.bee-card__qty-btn:hover {
+    border-color: var(--border-active);
+    color: var(--text-accent);
+}
+
+.bee-card__qty-value {
+    font-size: 14px;
+    color: var(--text-primary);
+    min-width: 30px;
+    text-align: center;
+}
+
+.bee-card__cost {
+    font-size: 9px;
+    color: var(--text-accent);
+    text-align: center;
+    margin-bottom: var(--space-sm);
+}
+
+.bee-card__cost--error {
+    color: var(--error);
+}
+
+.bee-card__owned {
+    font-size: 8px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: var(--space-sm);
+}
+
+@media (max-width: 600px) {
+    .shop__grid {
+        grid-template-columns: 1fr;
+    }
+}

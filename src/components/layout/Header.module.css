@@ -1,0 +1,113 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Header Component Styles
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-xl);
+    border-bottom: 2px solid var(--border-default);
+    background: var(--bg-primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--text-accent);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.header__logo-icon {
+    font-size: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.header__nav-link {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color var(--duration) var(--ease-out);
+    background: none;
+    border: none;
+    font-family: inherit;
+}
+
+.header__nav-link:hover,
+.header__nav-link--active {
+    color: var(--text-accent);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.header__mock-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 8px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.header__mock-switch {
+    width: 36px;
+    height: 18px;
+    border: 2px solid var(--border-default);
+    background: var(--bg-deep);
+    cursor: pointer;
+    position: relative;
+    transition: all var(--duration) var(--ease-out);
+}
+
+.header__mock-switch--on {
+    border-color: var(--success);
+}
+
+.header__mock-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    background: var(--text-muted);
+    transition: all var(--duration) var(--ease-out);
+}
+
+.header__mock-switch--on::after {
+    left: 20px;
+    background: var(--success);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__logo {
+        font-size: 10px;
+    }
+}
